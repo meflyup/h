@@ -20,7 +20,8 @@ class AnnotationJSONPresentationService(object):
         self.links_svc = links_svc
 
         self.formatters = [
-            formatters.AnnotationFlagFormatter(self.session, authenticated_user)
+            formatters.AnnotationFlagFormatter(self.session, authenticated_user),
+            formatters.AnnotationModerationFormatter(self.session, authenticated_user)
         ]
 
     def present(self, annotation_resource):
